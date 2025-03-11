@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запишитесь на мини-курс по Frontend</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about-course_page_style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header_logo f-xs">
+            <a class="header_home-link" href="home_page.html">WeBro</a>
+        </div>
+    </div>
+    <div class="main-wrap">
+        <div class='main'>
+            <div class="hero ta-c c-g">
+                <div class="f-xl f-b">Мини-курс Frontend-разработки</div>
+                <div class="hero-panels f-xs f-n c-w">
+                    <div class="hero-panel">Стоимость: бесплатно</div>
+                    <div class="hero-panel">Сложность: низкая</div>
+                    <div class="hero-panel">Время прохождения: ~10 мин</div>
+                </div>
+
+                <!--
+                <div class="hero-info">
+                    <div class='f-l f-b'>Посмотрите видео о курсе</div>
+                    <div class='f-s f-n'>и узнайте, что вас ждет в процессе прохождения</div>
+                </div>
+                <div class="hero-video">
+                    <iframe class="hero-video" src="https://vkvideo.ru/video_ext.php?oid=-211119565&id=456239197&hash=f398b39888bd3f15" width="640" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+                -->
+
+            </div>
+            <div class="list c-g">
+                <div class="list-label-wrap">
+                    <img class='list-mark' src="public/list-question-mark-icon.svg" alt="" />
+                    <div class="list-label f-l f-b">Кому подойдет этот курс</div>
+                </div>
+                <ul class='list-items f-s'>
+                    <li class="list-item">Тем, кто хочет узнать, как создаются веб-сайты</li>
+                    <li class="list-item">Тем, кто хочет попрактиковаться в создании одностраничных сайтов</li>
+                    <li class="list-item">Всем любознательным</li>
+                </ul>
+            </div>
+            <div class="list c-g">
+                <div class="list-label-wrap">
+                    <img class='list-mark' src="public/list-question-mark-icon.svg" alt="" />
+                    <div class="list-label f-l f-b">Чему вы научитесь</div>
+                </div>
+                <ul class='list-items f-s'>
+                    <li class="list-item">Создавать проект и подготавливать свое рабочее пространство в Visual Studio Code</li>
+                    <li class="list-item">Создавать базовую структуру сайта на HTML и использовать основные элементы по назначению</li>
+                    <li class="list-item">Стилизовать свой сайт и адаптировать его под разные устройства с помощью CSS</li>
+                </ul>
+            </div>
+            <div class="form-area">
+                <div class="form-label f-xl f-b c-g">Зарегистрироваться на курс</div>
+                <form action="" class="form" id="registration-form">
+                    <!-- Поле для имени -->
+                    <input type="text" id="first-name-input" placeholder="Ваше имя" required>
+                    <div id="first-name-error" class="error-message"></div>
+            
+                    <!-- Поле для фамилии -->
+                    <input type="text" id="second-name-input" placeholder="Ваша фамилия" required>
+                    <div id="second-name-error" class="error-message"></div>
+            
+                    <!-- Поле для email -->
+                    <input type="email" id="email-input" placeholder="Ваша почта" required>
+                    <div id="email-error" class="error-message"></div>
+            
+                    <!-- Кнопка отправки -->
+                    <button type="submit" id="submit-button">Зарегистрироваться</button>
+                </form>
+                <div class="f-xs f-b c-g">
+                    <a href="course_page.html">Продолжить без регистрации</a>
+                </div>
+            </div>
+            <style>
+                .error-message {
+                    color: #ff0000; /* Красный цвет для ошибок */
+                    font-size: 12px; /* Меньший размер шрифта */
+                    margin-top: 5px; /* Отступ сверху */
+                    display: none; /* Скрываем по умолчанию */
+                }
+
+                input:invalid {
+                    border-color: #404040; /* Красная рамка для невалидных полей */
+                }
+
+                input:valid {
+                    border-color: #587FFF; /* Зелёная рамка для валидных полей */
+                }
+            </style>
+            <script>
+                document.getElementById('registration-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Отменяем стандартное поведение формы
+
+                const firstName = document.getElementById('first-name-input').value.trim();
+                const secondName = document.getElementById('second-name-input').value.trim();
+                const email = document.getElementById('email-input').value.trim();
+
+                let isValid = true;
+
+                // Проверка имени
+                if (firstName.length < 2) {
+                    showError('first-name-input', 'Имя должно содержать не менее 2 символов.');
+                    isValid = false;
+                } else {
+                    hideError('first-name-input');
+                }
+
+                // Проверка фамилии
+                if (secondName.length < 2) {
+                    showError('second-name-input', 'Фамилия должна содержать не менее 2 символов.');
+                    isValid = false;
+                } else {
+                    hideError('second-name-input');
+                }
+
+                // Проверка email
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    showError('email-input', 'Пожалуйста, введите корректный email.');
+                    isValid = false;
+                } else {
+                    hideError('email-input');
+                }
+
+                // Если всё в порядке, перенаправляем пользователя
+                if (isValid) {
+                    alert('Форма успешно отправлена!');
+                    window.location.href = 'course_page.html'; // Перенаправляем на нужную страницу
+                }
+            });
+
+
+
+                // Функция для скрытия ошибки
+                    function hideError(inputId) {
+                        const input = document.getElementById(inputId);
+                        const errorMessage = input.nextElementSibling;
+                        if (errorMessage && errorMessage.classList.contains('error-message')) {
+                            errorMessage.remove();
+                        }
+}
+            </script>
+        </div>
+    </div>
+    <div class="footer f-xs f-n">
+        Сайт выполнен в рамках учебного проекта по дисциплине "Проектирование и разработка интерфейсов пользователя" студентами группы П-25: Рудин Святослав, Айнур Ибрагимов, Дмитрий Абижанов. Руководитель проекта: Хаятова Лилия Рэхтямовна.
+    </div>
+    
+</body>
+</html>

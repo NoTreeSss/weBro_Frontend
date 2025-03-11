@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*
+  font-family: "Ubuntu Mono", serif;
+  font-weight: 400 || 700;
+  font-style: normal || italic;
+*/
+
+/* reset */
+
+a {
+    text-decoration: none;
+}
+
+
+/* page */
+
+body {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #404040;
+
+  font-family: "Ubuntu Mono", serif;
+}
+
+/* default classes */
+
+.ta-c {
+  text-align: center;
+}
+
+.f-n {
+  font-weight: 400;
+}
+
+.f-b {
+  font-weight: 700;
+}
+
+.f-xs {
+  font-size: 24px;
+}
+
+.f-s {
+  font-size: 32px;
+}
+
+.f-m {
+  font-size: 36px;
+}
+
+.f-l {
+  font-size: 40px;
+}
+
+.f-xl {
+  font-size: 64px;
+}
+
+.c-w {
+  color: #fff;
+}
+.c-b {
+  color: #587FFF;
+}
+.c-g {
+  color: #404040;
+}
+
+.bc-b {
+  background-color: #587FFF;
+}
+.bc-w {
+  background-color: #fff;
+}
+
+
+/* header */
+
+.header {
+  width: 100%;
+  padding: 10px 240px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo {
+  color: #FFF;
+}
+
+.header_course-btn {
+  padding: 10px 30px;
+
+  border: none;
+  border-radius: 20px;
+  color: #FFF;
+  background-color: #587FFF;
+
+  font-family: "Ubuntu Mono", serif;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+.header_course-btn:hover {
+  color: #587FFF;
+  background-color: #FFF;
+}
+
+.header_home-link {
+    color: #FFF;
+}
+
+
+/* main */
+
+.main-wrap {
+  width: 100%;
+  padding: 100px 0px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  
+  border-radius: 50px;
+  background-color: #FFF;
+}
+
+.main {
+  width: 100%;
+  padding: 0px 240px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* footer */
+
+.footer {
+  width: 100%;
+  padding: 50px 240px;
+  box-sizing: border-box;
+
+  display: flex;
+
+  color: #FFF;
+}
+
+
+
+/* list */
+
+.list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.list-label-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+
+.list-mark {
+  width: 50px;
+  height: 50px;
+}
+
+.list-items {
+  margin-left: 150px;
+}
+
+.list-item {
+  list-style-type: disc;
+
+  padding: 10px 0px;
+}
+
+@media (max-width: 1440px) {
+  .header {
+    padding: 10px 120px;
+  }
+
+  .main {
+    padding: 0px 120px;
+  }
+
+  .hero-img {
+    width: 100%;
+  }
+
+  .img_cours{
+    width: 1440px;
+  }
+  
+  .footer {
+    padding: 50px 120px;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 10px 50px;
+  }
+
+  .main {
+    padding: 0px 50px;
+  }
+  .footer {
+    padding: 50px 50px;
+  }
+  .img_cours{
+    width: 800px;
+  }
+}
+
+@media (max-width: 760px) {
+  .header {
+    padding: 10px 25px;
+  }
+
+  .main-wrap {
+    padding: 30px 0px;
+    border-radius: 25px;
+  }
+
+  .main {
+    padding: 0px 25px;
+  }
+
+  .footer {
+    padding: 25px 25px;
+  }
+
+
+  .f-xs {
+    font-size: 16px;
+  }
+  
+  .f-s {
+    font-size: 20px;
+  }
+  
+  .f-m {
+    font-size: 24px;
+  }
+  
+  .f-l {
+    font-size: 32px;
+  }
+  
+  .f-xl {
+    font-size: 40px;
+  }
+
+  .img_cours{
+    width: 760px;
+  }
+
+  .list-items {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 600px){
+  .img_cours{
+    width: 600px;
+  }
+}
+
+@media (max-width: 400px){
+  .img_cours{
+    width: 400px;
+  }
+}

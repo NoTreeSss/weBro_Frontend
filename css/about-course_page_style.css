@@ -1,0 +1,116 @@
+.main {
+    align-items: center;
+    gap: 100px;
+}
+
+
+.hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.hero-panels {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hero-panel {
+    padding: 10px 20px;
+    background-color: #587FFF;
+    border-radius: 20px;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* form */
+
+.form-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-label {
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    box-sizing: border-box;
+    width: 800px;
+    padding: 10px 30px;
+    border: 2px solid #404040;
+    border-radius: 30px;
+
+    font-size: 24px;
+    font-family: "Ubuntu Mono", serif;
+}
+input::placeholder {
+    font-size: 24px;
+    font-family: "Ubuntu Mono", serif;
+}
+
+#submit-button {
+    width: 800px;
+    padding: 20px 0px;
+    
+    border: none;
+    border-radius: 30px;
+    color: #FFF;
+    background-color: #587FFF;
+
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Ubuntu Mono", serif;
+    
+    transition: 0.2s;
+    cursor: pointer;
+}
+#submit-button:hover {
+    background-color: #404040;
+}
+
+
+@media (max-width: 1200px) {
+    input, #submit-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    .main {
+        gap: 40px;
+    }
+
+    input::placeholder {
+        font-size: 16px;
+    }
+
+    #submit-button {
+        font-size: 20px;
+    }
+}

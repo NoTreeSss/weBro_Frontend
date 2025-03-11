@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-курс по Frontend</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course_page_style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header_logo f-xs">
+            <a class="header_home-link" href="home_page.html">WeBro</a>
+        </div>
+    </div>
+    <div class="main-wrap">
+        <div class='main c-g'>
+            <h1 id="typewriter" class="f-xl f-b ta-c"></h1>
+            <!-- Секция 1: Введение в VS Code -->
+            <div class="scroll-section" id="vscode-intro">
+                <div class="f-m f-b">Введение в VS Code</div>
+                <div class="f-s">
+                    Что такое Visual Studio Code?
+                </div>
+                <div class="f-xs">
+                    Visual Studio Code (VS Code) – это бесплатный редактор кода с поддержкой множества языков программирования, включая HTML и CSS. Он удобен для верстки сайтов благодаря встроенным инструментам и плагинам.
+                </div>
+                <div class="f-s">Установка и настройка</div>
+                <div class="f-xs">
+                    Скачайте и установите VS Code.
+                    Запустите редактор и установите плагин Live Server:
+                    Перейдите во вкладку "Extensions" (Ctrl + Shift + X).
+                    Введите "Live Server" в поиск. Установите расширение на кнопку "Install".
+                </div>
+            </div>
+
+            <!-- Секция 2: Основы HTML и CSS -->
+            <div class="scroll-section" id="html-css-basics">
+                <div class="f-m f-b">Основы HTML и CSS</div>
+                <div class="f-s">Что такое HTML?</div>
+                <div class="f-xs">
+                    HTML (HyperText Markup Language) – это язык разметки, определяющий структуру веб-страницы. Подходит для:
+                    Лендингов,
+                    Блогов,
+                    Интернет-магазинов,
+                    Корпоративных сайтов.
+                    HTML использует теги, которые обозначают различные элементы страницы: заголовки, абзацы, изображения и т.д.
+                </div>
+                <div class="f-s">Что такое CSS?</div>
+                <div class="f-xs">
+                    CSS (Cascading Style Sheets) – отвечает за оформление HTML-страницы: цвета, шрифты, отступы, расположение элементов. Позволяет адаптировать сайт под разные устройства. Стили можно задавать тремя способами:
+                    Внешний файл (style.css),
+                    Встроенные стили (&lt;style&gt; в &lt;head&gt;),
+                    Прямо в атрибутах (style="color: red;").
+                </div>
+            </div>
+
+            <!-- Секция 3: Создание проекта -->
+            <div class="scroll-section" id="project-creation">
+                <div class="f-m f-b">Создание проекта</div>
+                <div class="f-xs">
+                    Создайте папку MyFirstSite.
+                    Откройте её в VS Code (File → Open Folder).
+                    Создайте структуру файлов:
+                </div>
+                <img src="public/level_code.svg" alt="">
+            </div>
+
+            <!-- Секция 4: Основная структура HTML-документа -->
+            <div class="scroll-section" id="html-structure">
+                <div class="f-m f-b">Основная структура HTML-документа</div>
+                <div class="f-xs">
+                    1. Создание HTML-файла
+                    Откройте index.html и добавьте базовую структуру:
+                </div>
+                <div class="code-block">
+                    <div class="code-block-header f-xs c-w">
+                        <span>html</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <div class="code-block-main f-xs c-w">
+                        <code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="ru"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="./css/style.css"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Название страницы&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+                        </code>
+                    </div>
+                </div>
+                <div class="f-xs">
+                    <li>DOCTYPE html – указывает, что документ написан на HTML5.</li>
+                    <li>meta charset="UTF-8" – кодировка UTF-8 (поддержка всех языков).</li>
+                    <li>meta name="viewport" – делает сайт адаптивным.</li>
+                    <li>title – заголовок страницы, отображается во вкладке браузера.</li>
+                    <li>link – подключает CSS.</li>
+                </div>
+            </div>
+
+            <!-- Секция 5: Разметка страницы -->
+            <div class="scroll-section" id="page-layout">
+                <div class="f-m f-b">Разметка страницы</div>
+                <div class="f-xs">Добавьте в index.html следующий код:</div>
+                <div class="code-block">
+                    <div class="code-block-header f-xs c-w">
+                        <span>html</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <div class="code-block-main f-xs c-w">
+                        <code>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;header class="header"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="left"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="/index.html"&gt;&lt;img class="logo" src="./img/logo.svg" alt="Логотип"&gt;&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="name-colog"&gt;Название организации&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Описание проекта&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;main class="main"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 class="name-monument"&gt;Название памятника&lt;/h2&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img class="img-monument" src="./img/monument.jpg" alt="Изображение памятника"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="text-monument"&gt;Здесь будет описание памятника...&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;footer class="footer"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="footer-info"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="logo-footer"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="./img/footer-logo.svg" alt="Логотип"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="name-footer"&gt;Название организации&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="name-teacher"&gt;Имя руководителя проекта&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;<br>
+&lt;/body&gt;
+                        </code>
+                    </div>
+                </div>
+                <div class="f-m">
+                    Разбор структуры
+                </div>
+                <div class="f-xs">
+                    <li>&lt;header&gt; – верхняя часть сайта (логотип, заголовок, меню).</li>
+                    <li>&lt;main&gt; – основное содержимое страницы.</li>
+                    <li>&lt;footer&gt; – подвал (контактная информация, авторство).</li>
+                </div>
+            </div>
+
+            <!-- Секция 6: Основы CSS: работа со стилями -->
+            <div class="scroll-section" id="css-basics">
+                <div class="f-m f-b">Основы CSS: работа со стилями</div>
+                <div class="f-m">Подключение CSS</div>
+                <div class="f-xs">В файле index.html стили уже подключены через:</div>
+                <img  src="public/code_css.svg" alt="">
+                <div class="f-m">Базовые стили</div>
+                <div class="f-xs">Создайте css/style.css и добавьте:</div>
+                <div class="code-block">
+                    <div class="code-block-header f-xs c-w">
+                        <span>css</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <div class="code-block-main f-xs c-w">
+                        <code>
+body {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-family: Arial, sans-serif;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+}<br>
+.header {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #FFE4D9;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 58px 0 61px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-around;<br>
+}<br>
+.main {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+}<br>
+.footer-info {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #FFE4D9;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-around;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 248px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin-top: 69px;<br>
+}
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция 7: Медиа-запросы (адаптивность) -->
+            <div class="scroll-section" id="media-queries">
+                <div class="f-m f-b">Медиа-запросы (адаптивность)</div>
+                <div class="f-s">Медиа-запросы позволяют изменять стили в зависимости от ширины экрана.</div>
+                <div class="code-block">
+                    <div class="code-block-header f-xs c-w">
+                        <span>css</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <div class="code-block-main f-xs c-w">
+                        <code>
+@media (max-width: 768px) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.header {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.text-monument {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 90%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.img-monument {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 80%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}
+                        </code>
+                    </div>
+                </div>
+                <div class="f-m">
+                    Как это работает?
+                </div>
+                <div class="f-xs">
+                    <li>max-width: 768px – стили внутри применяются, если ширина экрана меньше 768px.</li>
+                    <li>Меняется расположение .header (становится вертикальным).</li>
+                    <li>.text-monument и .img-monument становятся уже, адаптируясь к экрану.</li>
+                </div>
+            </div>
+
+            <!-- Секция 8: Запуск проекта -->
+            <div class="scroll-section" id="project-launch">
+                <div class="f-m f-b">Запуск проекта</div>
+                <div class="f-xs">
+                    <li>Сохраните файлы (Ctrl + S).</li>
+                    <li>Откройте index.html → "Open with Live Server".</li>
+                    <li>Сайт откроется в браузере.</li>
+                </div>
+                <div class="f-xs">
+                    Теперь у вас есть базовый одностраничный сайт, созданный пошагово! 🚀
+                </div>
+                <img class="img_cours"  src="public/number1_result.svg" alt="">
+            </div>
+
+            <!-- Секция 9: Заполнение нужными элементами -->
+            <div class="scroll-section" id="filling-elements">
+                <div class="f-m f-b">Заполнение нужными элементами</div>
+                <div class="f-xs">
+                    <li>Создайте папку img и добавьте в неё нужные изображения.</li>
+                    <li>Заполните шаблонные данные нужным текстом.</li>
+                    <li>Сохраните файлы (Ctrl + S).</li>
+                    <li>Откройте index.html → "Open with Live Server".</li>
+                    <li>Сайт откроется в браузере.</li>
+                </div>
+                <img class="img_cours" src="public/number2_result.svg" alt="">
+            </div>
+             <div class="final_button_site">
+                <a href="https://notreesss.github.io/site_9may/card-eaglet.html"><button class="next_site">Посмотреть итоговый результат</button></a>
+             </div>
+        </div>
+    </div>
+
+    <!-- Бургер-меню -->
+    <button id="burger-menu">
+        <img src="public/burger-menu-icon.svg" alt="Menu">
+        <div class="f-xs f-n c-w" id="burger-menu-button">Навигация</div>
+    </button>
+
+    <!-- Навигационное меню -->
+    <div class="nav">
+        <div class="nav-label f-s f-n">Навигация</div>
+        <div class="nav-list">
+            <div class="nav-list-item f-xs f-n" data-target="vscode-intro">Введение в VS Code</div>
+            <div class="nav-list-item f-xs f-n" data-target="html-css-basics">Основы HTML и CSS</div>
+            <div class="nav-list-item f-xs f-n" data-target="project-creation">Создание проекта</div>
+            <div class="nav-list-item f-xs f-n" data-target="html-structure">Основная структура HTML-документа</div>
+            <div class="nav-list-item f-xs f-n" data-target="page-layout">Разметка страницы</div>
+            <div class="nav-list-item f-xs f-n" data-target="css-basics">Основы CSS: работа со стилями</div>
+            <div class="nav-list-item f-xs f-n" data-target="media-queries">Медиа-запросы (адаптивность)</div>
+            <div class="nav-list-item f-xs f-n" data-target="project-launch">Запуск проекта</div>
+            <div class="nav-list-item f-xs f-n" data-target="filling-elements">Заполнение нужными элементами</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer f-xs f-n">
+        Сайт выполнен в рамках учебного проекта по дисциплине "Проектирование и разработка интерфейсов пользователя" студентами группы П-25: Рудин Святослав, Айнур Ибрагимов, Дмитрий Абижанов. Руководитель проекта: Хаятова Лилия Рэхтямовна.
+    </div>
+
+
+
+    <button id="back-to-top" title="Наверх">↑</button>
+    <script>
+        //кнопка вверх
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+<!-- шкала прогресса -->
+        <div id="reading-progress">
+            <div id="progress-bar"></div>
+        </div>
+        <style>
+            #reading-progress {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background-color: #f1f1f1;
+            }
+            #progress-bar {
+                height: 100%;
+                width: 0;
+                background-color: #404040;
+            }
+        </style>
+        <script>
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = (scrollTop / scrollHeight) * 100;
+                document.getElementById('progress-bar').style.width = progress + '%';
+            });
+        </script>
+
+
+        <script>
+            // анимация печати
+            const text = "Приступим к курсу!";
+            let index = 0;
+            function typeWriter() {
+                if (index < text.length) {
+                    document.getElementById('typewriter').innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+        </script>
+
+    <script>
+        // Анимация прокрутки
+        const sections = document.querySelectorAll('.scroll-section');
+
+function checkScroll() {
+    sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionBottom = section.getBoundingClientRect().bottom;
+
+        // Если секция видна на экране
+        if (sectionTop < window.innerHeight * 0.8 && sectionBottom > 0) {
+            section.classList.add('show');
+        } else {
+            section.classList.remove('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
+
+// Навигация через бургер-меню
+const burgerMenu = document.getElementById('burger-menu');
+const navMenu = document.querySelector('.nav');
+
+burgerMenu.addEventListener('click', function () {
+    navMenu.classList.toggle('active');
+});
+
+// Прокрутка к секциям при клике на пункты меню
+const navItems = document.querySelectorAll('.nav-list-item');
+navItems.forEach(item => {
+    item.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            // Показываем секцию перед прокруткой
+            targetSection.classList.add('show');
+
+            // Прокручиваем к секции
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Закрываем меню после выбора пункта
+            navMenu.classList.remove('active');
+        }
+    });
+});
+
+        // Копирование кода
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block').querySelector('code');
+            const codeText = codeBlock.innerText.replace(/<br>/g, '\n').replace(/&nbsp;/g, ' ');
+            navigator.clipboard.writeText(codeText)
+                .then(() => {
+                    button.textContent = 'Copy!';
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                })
+                .catch((err) => {
+                    console.error('Copy?', err);
+                });
+        }
+    </script>
+</body>
+</html>
